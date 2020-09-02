@@ -1,33 +1,8 @@
-EggTimer - Final Code 
-============================================================================
-
-Solution code for Advanced Android with Kotlin Codelab 
-
-Introduction
-------------
+# egg-timer 
 
 EggTimer is a timer app for cooking eggs.
-You can start and stop the timer, choose different cooking intervals.. 
+You can start and stop the timer, as well as choose different cooking intervals.
 
-In this codelab, working from this starter app, you:
+## App Screenshots
 
-* Add notitications to the eggtimer app.
-* Use channels and importance for the app notifications. 
-* Customize and style the notifications.
-
-
-Pre-requisites
---------------
-
-You should be familiar with:
-
-* Services, AlarmManager, Broadcast Receivers.
-
-
-Getting Started
----------------
-
-1. Download
-2. Swtich to start branch
-3. Run the app.
-
+<img src="https://user-images.githubusercontent.com/33599053/91978065-cf8d3e80-ed23-11ea-89e8-9722f08641e9.png" width=30% height=30%> 
