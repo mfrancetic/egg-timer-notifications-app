@@ -63,6 +63,7 @@ class EggTimerFragment : Fragment() {
     }
 
     private fun createChannel(channelId: String, channelName: String) {
+        // Channels are available from api level 26.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(
                 channelId,

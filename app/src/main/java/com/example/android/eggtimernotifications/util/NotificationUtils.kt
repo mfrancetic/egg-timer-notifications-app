@@ -45,6 +45,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         applicationContext,
         REQUEST_CODE,
         contentIntent,
+        //  update the current pendingINtent, and not create another one
         PendingIntent.FLAG_UPDATE_CURRENT
     )
 
@@ -65,6 +66,12 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         FLAGS
     )
 
+    /*
+    To support devices running older versions you need to use NotificationCompat builder instead of
+    notification builder. Get an instance of the NotificationCompat builder, pass in the app context
+    and a channel id. The channel id is a string value from string resources which uses the matching
+    channel. Starting with API level 26, all notifications must be assigned to a channel.
+     */
     // Build the notification
     val builder = NotificationCompat.Builder(
         applicationContext,
@@ -77,6 +84,8 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setContentText(messageBody)
 
         .setContentIntent(contentPendingIntent)
+        // the notification will dismiss itself, when the user clicks on the notification,
+        // as it takes the user to the app
         .setAutoCancel(true)
         .setStyle(bigPicStyle)
 
@@ -88,6 +97,8 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         )
 
         .setPriority(NotificationCompat.PRIORITY_HIGH)
+    // notification_id --> represents the current notification instance,
+    // is needed for updating or cancelling this notification
     notify(NOTIFICATION_ID, builder.build())
 }
 
